@@ -91,3 +91,14 @@ staticwebapp.config.json
 B. Deploy your static website
 
 Commit and checkin code
+
+In the "Azure Resource" VC plugin, right click "Static Web Apps" and select "Create Static Web App..."
+
+```
+name=my-blog
+static-site
+Western Europe
+Custom
+app location=/static-site
+build output=out
+```
