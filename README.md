@@ -88,4 +88,4 @@ Copy files:-
 playwright.config.ts
 staticwebapp.config.json
 
-B.
+B. Deploy your static website
