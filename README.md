@@ -83,11 +83,12 @@ test("basic test", async ({ page }) => {
 From nextjs-starter
 
 Copy files:-
-.github
+.github ..
 .prettierrc.json
 playwright.config.ts
 staticwebapp.config.json
 
+update lint.yml and playwright.js.yml replaceing "npm" with "cd static-site && yarn"
 B. Deploy your static website
 
 Commit and checkin code

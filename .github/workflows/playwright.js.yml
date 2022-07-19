@@ -7,9 +7,9 @@ on:
   # Runs on push or pull requests and nightly
   push:
   pull_request:
-  schedule: 
+  schedule:
     # nightly
-    - cron: '0 0 * * *'
+    - cron: "0 0 * * *"
 
 jobs:
   build:
@@ -21,13 +21,13 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
-    - name: Install dependencies
-      run: npm ci
-    - name: Install Playwright
-      run: npx playwright install --with-deps
-    - name: Build production build
-      run: npm run build
-    - name: Run your tests
-      run: npm run test
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+      - name: Install dependencies
+        run: cd static-site && yarn ci
+      - name: Install Playwright
+        run: cd static-site && yarnnpx playwright install --with-deps
+      - name: Build production build
+        run: cd static-site && yarn build
+      - name: Run your tests
+        run: cd static-site && yarn test
