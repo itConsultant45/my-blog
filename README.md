@@ -83,7 +83,7 @@ test("basic test", async ({ page }) => {
 From nextjs-starter
 
 Copy files:-
-.github ..
+.github to ..
 .prettierrc.json
 playwright.config.ts
 staticwebapp.config.json
@@ -112,6 +112,14 @@ yarn add -D postcss @tailwindcss/postcss7-compat autoprefix
 npx tailwindcss-cli@latest init
 ```
 
+update tailwind.config.js
+
+```js
+  mode: 'jit',
+  purge: ['./**/*.{js,jsx,ts,tsx}'],
+  darkMode: false
+```
+
 update global.css
 
 ```css
@@ -121,3 +129,27 @@ update global.css
 
 html,
 ```
+
+D. Copy more stuff
+
+From nextjs-blog
+
+Copy:-
+components
+lib
+pages/posts
+posts
+public/images
+
+```bash
+yarn add gray-matter remark remark-html date-fns
+```
+
+Fix lint and build errors....
+
+Copy:-
+pages/index.tsx
+
+Fix lint and build errors....
+
+Commit and push (WIP)
