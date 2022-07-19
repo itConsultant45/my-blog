@@ -23,8 +23,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
+      - name: Install ci
+        run: cd static-site && yarn add ci
       - name: Install dependencies
-        run: cd static-site && npm ci
+        run: cd static-site && yarn ci
       - name: Install Playwright
         run: cd static-site && npx playwright install --with-deps
       - name: Build production build
