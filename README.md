@@ -89,3 +89,5 @@ playwright.config.ts
 staticwebapp.config.json
 
 B. Deploy your static website
+
+Commit and checkin code
