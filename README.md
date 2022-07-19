@@ -103,3 +103,21 @@ Custom
 app location=/static-site
 build output=out
 ```
+
+C. Install tailwind css
+
+```bash
+yarn add -D postcss @tailwindcss/postcss7-compat autoprefix
+
+npx tailwindcss-cli@latest init
+```
+
+update global.css
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+```
