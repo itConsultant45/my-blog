@@ -4,7 +4,7 @@ createdDate: '2020-03-16T05:35:07.322Z'
 updatedDate: '2020-03-17T05:35:07.322Z'
 author:
   name: itConsultant45
-  picture: '/authors/mf.jpeg'
+  picture: '../authors/mf.jpeg'
 ---
 
 Next.js has two forms of pre-rendering: **Static Generation** and **Server-side Rendering**. The difference is in **when** it generates the HTML for a page.

@@ -1,6 +1,8 @@
+import Head from 'next/head';
+import Image from 'next/image';
+
 import Layout from '../../components/layout';
 import { getAllPostIds, getPostData } from '../../lib/posts';
-import Head from 'next/head';
 import Date from '../../components/date';
 
 export default function Post({ postData }: any) {
@@ -11,15 +13,25 @@ export default function Post({ postData }: any) {
       </Head>
       <article>
         <h1 className="h-5">{postData.title}</h1>
-        <div className="text-blue-100">
-          Created: <Date dateString={postData.createdDate} />
+        <small className="block">
+          {' Created: '}
+          <Date dateString={postData.createdDate} />
           {postData.updatedDate && (
-            <div className="block">
-              {' '}
-              Updated: <Date dateString={postData.updatedDate} />
-            </div>
+            <>
+              {' Updated: '}
+              <Date dateString={postData.updatedDate} />
+            </>
           )}
-        </div>
+          {' Author: '}
+          <Image
+            priority
+            src={postData.author.picture}
+            height={16}
+            width={16}
+            alt={postData.author.name}
+          />{' '}
+          {postData.author.name}
+        </small>
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </article>
     </Layout>

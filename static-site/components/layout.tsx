@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
+
 import { AiOutlineHome } from 'react-icons/ai';
 
 const name = 'Michael Fernandez';
@@ -22,7 +23,7 @@ export default function Layout({ children, home }: any) {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <header className="table-header-group">
-        {home ? (
+        {home && (
           <>
             <Image
               priority
@@ -33,26 +34,6 @@ export default function Layout({ children, home }: any) {
               alt={name}
             />
             <h1 className="h-10">{name}</h1>
-          </>
-        ) : (
-          <>
-            <Link href="/">
-              <a>
-                <Image
-                  priority
-                  src="../images/profile.jpg"
-                  className="border-rose-500"
-                  height={108}
-                  width={108}
-                  alt={name}
-                />
-              </a>
-            </Link>
-            <h2 className="h-8">
-              <Link href="/">
-                <a>{name}</a>
-              </Link>
-            </h2>
           </>
         )}
       </header>
