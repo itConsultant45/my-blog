@@ -137,6 +137,7 @@ From nextjs-blog
 
 Copy:-
 components
+interfaces
 lib
 pages/posts
 posts
