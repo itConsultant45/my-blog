@@ -11,23 +11,34 @@ export default function Home({ allPostsData }: any) {
         <title>{siteTitle}</title>
       </Head>
       <section className="h-2">
-        <p>[Your Self Introduction]</p>
         <p>
-          (This is a sample website - you’ll be building a site like this in{' '}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
+          With over 20 years' experience building both small and large-scale
+          solutions for clients, covering a variety of sectors. Deeply
+          understands the complete project lifecycle from meeting clients,
+          collecting business requirements, analysing and designing systems,
+          creating and following specifications to developing from the front to
+          the back end, loosely coupled, distributed services of high quality
+          and testability.
         </p>
       </section>
       <section className="h-3">
         <h2 className="h-5">Blog</h2>
         <ul className="list-item">
-          {allPostsData.map(({ id, date, title }: any) => (
+          {allPostsData.map(({ id, createdDate, updatedDate, title }: any) => (
             <li className="list-item" key={id}>
               <Link href={`/posts/${id}`}>
                 <a>{title}</a>
               </Link>
               <br />
               <small className="text-red-300">
-                <Date dateString={date} />
+                Created: <Date dateString={createdDate} />
+                {updatedDate && (
+                  <div className="block">
+                    {' '}
+                    Updated:
+                    <Date dateString={updatedDate} />
+                  </div>
+                )}
               </small>
             </li>
           ))}

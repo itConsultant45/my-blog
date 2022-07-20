@@ -53,9 +53,9 @@ yarn add -D @playwright/test
 update package.json
 
 ```json
-  "build": "next build && next export",
-  "fix": "next lint --fix",
-  "test": "playwright test",
+    "build": "next build && next export",
+    "fix": "next lint --fix",
+    "test": "playwright test",
 ```
 
 update next.config.js
@@ -84,6 +84,7 @@ From nextjs-starter
 
 Copy files:-
 .github to ..
+@types
 .prettierrc.json
 playwright.config.ts
 staticwebapp.config.json
@@ -116,7 +117,7 @@ update tailwind.config.js
 
 ```js
   mode: 'jit',
-  purge: ['./**/*.{js,jsx,ts,tsx}'],
+  purge: ['./**/*.{js,jsx,ts,tsx}', './public/index.html'],
   darkMode: false
 ```
 
@@ -143,6 +144,7 @@ public/images
 
 ```bash
 yarn add gray-matter remark remark-html date-fns
+yarn add react-icons
 ```
 
 Fix lint and build errors....

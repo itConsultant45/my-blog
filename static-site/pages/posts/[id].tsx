@@ -12,7 +12,13 @@ export default function Post({ postData }: any) {
       <article>
         <h1 className="h-5">{postData.title}</h1>
         <div className="text-blue-100">
-          <Date dateString={postData.date} />
+          Created: <Date dateString={postData.createdDate} />
+          {postData.updatedDate && (
+            <div className="block">
+              {' '}
+              Updated: <Date dateString={postData.updatedDate} />
+            </div>
+          )}
         </div>
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </article>

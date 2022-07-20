@@ -1,19 +1,17 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
+import { AiOutlineHome } from 'react-icons/ai';
 
-const name = '[Your Name]';
-export const siteTitle = 'Next.js Sample Website';
+const name = 'Michael Fernandez';
+export const siteTitle = "Michael's blog";
 
 export default function Layout({ children, home }: any) {
   return (
     <div className="container">
       <Head>
         <link rel="icon" href="/favicon.ico" />
-        <meta
-          name="description"
-          content="Learn how to build a personal website using Next.js"
-        />
+        <meta name="description" content="Michael\'s blog" />
         <meta
           property="og:image"
           content={`https://og-image.vercel.app/${encodeURI(
@@ -42,7 +40,7 @@ export default function Layout({ children, home }: any) {
               <a>
                 <Image
                   priority
-                  src="/images/profile.jpg"
+                  src="../images/profile.jpg"
                   className="border-rose-500"
                   height={108}
                   width={108}
@@ -62,7 +60,9 @@ export default function Layout({ children, home }: any) {
       {!home && (
         <div className="m-3">
           <Link href="/">
-            <a>← Back to home</a>
+            <a>
+              <AiOutlineHome /> Back to home
+            </a>
           </Link>
         </div>
       )}
