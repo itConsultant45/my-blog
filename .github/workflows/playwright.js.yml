@@ -32,4 +32,4 @@ jobs:
       - name: Build production build
         run: cd static-site && yarn build
       - name: Run your tests
-        run: cd static-site && yarn test:ui
+        run: cd static-site && yarn test
