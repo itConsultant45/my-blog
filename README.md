@@ -58,16 +58,6 @@ update package.json
     "test": "playwright test",
 ```
 
-update next.config.js
-
-```js
-swcMinify: true,
-  images: {
-    loader: "akamai",
-    path: ""
-  }
-```
-
 create file tests/example.spec.ts
 
 ```ts
@@ -84,7 +74,6 @@ From nextjs-starter
 
 Copy files:-
 .github to ..
-@types
 .prettierrc.json
 playwright.config.ts
 staticwebapp.config.json
@@ -108,7 +97,7 @@ build output=out
 C. Install tailwind css
 
 ```bash
-yarn add -D postcss tailwindcss autoprefix
+yarn add -D postcss tailwindcss
 npx tailwindcss init
 npx tailwindcss-cli@latest init
 ```
@@ -120,6 +109,7 @@ update tailwind.config.js
   content: [
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
+  ],
   darkMode: 'class',
 ```
 
@@ -127,7 +117,10 @@ create postcss.config.js
 
 ```js
 module.exports = {
-  plugins: [require("autoprefixer"), require("postcss-nested")],
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
 };
 ```
 
@@ -135,6 +128,10 @@ update next.config.js
 
 ```js
   swcMinify: false,
+  images: {
+    loader: "akamai",
+    path: "",
+  },
 ```
 
 replace global.css
@@ -156,7 +153,7 @@ update index.tsx
   </head>
 
   <header>
-    <p>Footer</p>
+    <p>Header</p>
   </header>
 
   <main>
@@ -174,6 +171,7 @@ D. Copy more stuff
 From nextjs-blog
 
 Copy:-
+@types
 components
 interfaces
 lib
