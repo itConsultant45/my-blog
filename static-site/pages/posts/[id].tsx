@@ -3,7 +3,7 @@ import { FaCalendarAlt } from 'react-icons/fa';
 import { BsPersonFill } from 'react-icons/bs';
 
 import Layout from '../../components/layout';
-import { getAllPostIds, getPostData } from '../../lib/posts';
+import { getAllPostIds, getPostData } from '../../lib/post-data';
 import Date from '../../components/date';
 import PostType from '../../interfaces/post';
 

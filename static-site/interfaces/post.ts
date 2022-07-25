@@ -8,6 +8,8 @@ type PostType = {
   author: AuthorType;
   excerpt: string;
   contentHtml: string;
+  categories: string[];
+  tags: string[];
 };
 
 export default PostType;

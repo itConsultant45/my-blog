@@ -1,7 +1,5 @@
-import { FiArrowRight } from 'react-icons/fi';
-
 import Layout from '../components/layout';
-import { getSortedPostsData } from '../lib/posts';
+import { getSortedPostsData } from '../lib/post-data';
 import Posts from '../components/posts';
 
 type Props = {
