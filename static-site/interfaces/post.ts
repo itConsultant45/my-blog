@@ -7,7 +7,7 @@ type PostType = {
   coverImage: string;
   author: AuthorType;
   excerpt: string;
-  content: string;
+  contentHtml: string;
 };
 
 export default PostType;

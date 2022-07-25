@@ -23,7 +23,7 @@ export function getSortedPostsData() {
 
     var excerpt = matterResult.excerpt;
     if (!excerpt) {
-      var s = matterResult.content.substring(0, 280);
+      var s = matterResult.content.substring(0, 250);
       excerpt = s.substring(0, s.lastIndexOf(' ')) + ' ...';
     }
 
