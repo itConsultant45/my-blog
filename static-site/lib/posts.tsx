@@ -21,9 +21,16 @@ export function getSortedPostsData() {
     // Use gray-matter to parse the post metadata section
     const matterResult = matter(fileContents);
 
+    var excerpt = matterResult.excerpt;
+    if (!excerpt) {
+      var s = matterResult.content.substring(0, 280);
+      excerpt = s.substring(0, s.lastIndexOf(' ')) + ' ...';
+    }
+
     // Combine the data with the id
     return {
       id,
+      excerpt,
       ...matterResult.data,
     };
   });
