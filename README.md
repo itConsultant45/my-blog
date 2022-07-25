@@ -46,14 +46,16 @@ npx create-next-app@latest --ts # name=static-site
 A. Setup prettier, playwright and setup export
 
 ```bash
-yarn add -D prettier eslint-config-prettier eslint-plugin-prettier
+yarn add -D prettier eslint eslint-config-prettier eslint-plugin-prettier
 yarn add -D @playwright/test
+yarn add --dev @types/react @types/node
 ```
 
 update package.json
 
 ```json
     "build": "next build && next export",
+    "lint": "next lint",
     "fix": "next lint --fix",
     "test": "playwright test",
 ```
@@ -130,7 +132,7 @@ update next.config.js
   swcMinify: false,
   images: {
     loader: "akamai",
-    path: "",
+    path: "/",
   },
 ```
 
@@ -168,12 +170,16 @@ update index.tsx
 
 D. Copy more stuff
 
-From nextjs-blog
+From blog-starter
 
 Copy:-
 @types
-components
 interfaces
+
+From nextjs-blog
+
+Copy:-
+components
 lib
 pages/posts
 posts
