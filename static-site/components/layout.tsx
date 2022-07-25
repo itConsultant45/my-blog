@@ -33,7 +33,7 @@ export default function Layout({ children, home, post }: any) {
         {home && (
           <>
             {/* <Link as={`/posts/11`} href="/posts/[slug]"> */}
-            <a className="flex hover:underline">Show More → </a>
+            <a className="flex hover:underline">Show More →</a>
           </>
         )}
         {post && (
