@@ -9,7 +9,7 @@ const postsDirectory = path.join(process.cwd(), 'posts');
 const fileNames = fs.readdirSync(postsDirectory);
 
 export function getSortedPostsData() {
-  const allPostsData = fileNames.map((fileName) => {
+  const allPostsData = fileNames.map(async (fileName) => {
     // Remove ".md" from file name to get id
     const id = fileName.replace(/\.md$/, '');
     const matterResult = getMatterResult(fileName);
@@ -41,13 +41,6 @@ export function getCategoriesData() {
   const allCategories = fileNames.map((fileName) => {
     const matterResult = getMatterResult(fileName);
 
-    var excerpt = matterResult.excerpt;
-    if (!excerpt) {
-      var s = matterResult.content.substring(0, 250);
-      excerpt = s.substring(0, s.lastIndexOf(' ')) + ' ...';
-    }
-
-    // Combine the data with the id
     return {
       categories: matterResult.data.categories as string[],
     };
@@ -73,13 +66,6 @@ export function getTagsData() {
   const allTags = fileNames.map((fileName) => {
     const matterResult = getMatterResult(fileName);
 
-    var excerpt = matterResult.excerpt;
-    if (!excerpt) {
-      var s = matterResult.content.substring(0, 250);
-      excerpt = s.substring(0, s.lastIndexOf(' ')) + ' ...';
-    }
-
-    // Combine the data with the id
     return {
       tags: matterResult.data.tags as string[],
     };
