@@ -23,7 +23,6 @@ const RightSide = ({ allCategoriesData, allTagsData }: Props) => {
         X...
       </div>
       <br />
-      <br />
       <div className=" bg-gray-200">
         Categories
         <div className="flex-grow border-t m-2 border-gray-400"></div>
@@ -35,6 +34,7 @@ const RightSide = ({ allCategoriesData, allTagsData }: Props) => {
         <div className="flex-grow border-t m-2 border-gray-400"></div>
         {tags.join(' ')}
       </div>
+      <br />
       <div className=" bg-gray-200">
         Archive
         <div className="flex-grow border-t m-2 border-gray-400"></div>

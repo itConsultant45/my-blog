@@ -11,6 +11,7 @@ import {
 } from '../../lib/post-data';
 import Date from '../../components/date';
 import PostType from '../../interfaces/post';
+import PostBody from '../../components/post-body';
 
 type Props = {
   postData: PostType;
@@ -23,6 +24,7 @@ export default function Post({
   allCategoriesData,
   allTagsData,
 }: Props) {
+  console.log(postData.contentHtml);
   return (
     <Layout
       post
@@ -44,7 +46,7 @@ export default function Post({
             <span>me</span>
           </div>
 
-          <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+          <PostBody content={postData.contentHtml} />
 
           <div className="flex items-center">
             <AiFillFolderOpen />
