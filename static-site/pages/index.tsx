@@ -1,15 +1,28 @@
 import Layout from '../components/layout';
-import { getSortedPostsData, getTagsData } from '../lib/post-data';
+import {
+  getSortedPostsData,
+  getCategoriesData,
+  getTagsData,
+} from '../lib/post-data';
 import Posts from '../components/posts';
 
 type Props = {
   allPostsData: any;
+  allCategoriesData: { name: string; count: number }[];
   allTagsData: { name: string; count: number }[];
 };
 
-export default function Home({ allPostsData, allTagsData }: Props) {
+export default function Home({
+  allPostsData,
+  allCategoriesData,
+  allTagsData,
+}: Props) {
   return (
-    <Layout home allTagsData={allTagsData}>
+    <Layout
+      home
+      allCategoriesData={allCategoriesData}
+      allTagsData={allTagsData}
+    >
       <Posts allPostsData={allPostsData} />
     </Layout>
   );
@@ -17,10 +30,12 @@ export default function Home({ allPostsData, allTagsData }: Props) {
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
+  const allCategoriesData = getCategoriesData();
   const allTagsData = getTagsData();
   return {
     props: {
       allPostsData,
+      allCategoriesData,
       allTagsData,
     },
   };

@@ -3,18 +3,32 @@ import { FaCalendarAlt } from 'react-icons/fa';
 import { BsPersonFill } from 'react-icons/bs';
 
 import Layout from '../../components/layout';
-import { getAllPostIds, getPostData, getTagsData } from '../../lib/post-data';
+import {
+  getAllPostIds,
+  getCategoriesData,
+  getPostData,
+  getTagsData,
+} from '../../lib/post-data';
 import Date from '../../components/date';
 import PostType from '../../interfaces/post';
 
 type Props = {
   postData: PostType;
+  allCategoriesData: { name: string; count: number }[];
   allTagsData: { name: string; count: number }[];
 };
 
-export default function Post({ postData, allTagsData }: Props) {
+export default function Post({
+  postData,
+  allCategoriesData,
+  allTagsData,
+}: Props) {
   return (
-    <Layout post allTagsData={allTagsData}>
+    <Layout
+      post
+      allCategoriesData={allCategoriesData}
+      allTagsData={allTagsData}
+    >
       <article>
         <div className="mb-8 md:mb-16">
           <h1 className="mb-4 text-1xl lg:text-2xl leading-tight">
@@ -57,10 +71,12 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }: { params: { id: string } }) {
   const postData = await getPostData(params.id);
+  const allCategoriesData = getCategoriesData();
   const allTagsData = getTagsData();
   return {
     props: {
       postData,
+      allCategoriesData,
       allTagsData,
     },
   };

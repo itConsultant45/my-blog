@@ -8,7 +8,13 @@ import RightSide from './right-side';
 export const myName = 'Michael Fernandez';
 export const siteTitle = 'Next.js Sample Website';
 
-export default function Layout({ children, home, post, allTagsData }: any) {
+export default function Layout({
+  children,
+  home,
+  post,
+  allCategoriesData,
+  allTagsData,
+}: any) {
   return (
     <>
       <Head>
@@ -25,6 +31,9 @@ export default function Layout({ children, home, post, allTagsData }: any) {
 
         <section className="float-left p-10 w-1/3 hidden lg:block">
           <RightSide
+            allCategoriesData={
+              allCategoriesData as { name: string; count: number }[]
+            }
             allTagsData={allTagsData as { name: string; count: number }[]}
           />
         </section>
