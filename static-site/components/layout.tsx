@@ -1,16 +1,14 @@
 import Head from 'next/head';
-import Image from 'next/image';
 import Link from 'next/link';
-import { FiArrowRight } from 'react-icons/fi';
-import Footer from './footer';
 
+import Footer from './footer';
 import Header from './header';
 import RightSide from './right-side';
 
 export const myName = 'Michael Fernandez';
 export const siteTitle = 'Next.js Sample Website';
 
-export default function Layout({ children, home, post }: any) {
+export default function Layout({ children, home, post, allTagsData }: any) {
   return (
     <>
       <Head>
@@ -26,7 +24,9 @@ export default function Layout({ children, home, post }: any) {
         </section>
 
         <section className="float-left p-10 w-1/3 hidden lg:block">
-          <RightSide />
+          <RightSide
+            allTagsData={allTagsData as { name: string; count: number }[]}
+          />
         </section>
       </div>
       <h3 className="text-lg mb-3 leading-snug">

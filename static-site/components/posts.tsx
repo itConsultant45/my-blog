@@ -1,11 +1,5 @@
 import Link from 'next/link';
 
-import { AiFillFolderOpen, AiOutlineTags } from 'react-icons/ai';
-import { FaCalendarAlt } from 'react-icons/fa';
-import { FiArrowRight } from 'react-icons/fi';
-import { BsPersonFill } from 'react-icons/bs';
-
-import Date from '../components/date';
 import PostType from '../interfaces/post';
 import PostFooter from './post-footer';
 import PostHeader from './post-header';

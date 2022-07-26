@@ -1,14 +1,15 @@
 import Layout from '../components/layout';
-import { getSortedPostsData } from '../lib/post-data';
+import { getSortedPostsData, getTagsData } from '../lib/post-data';
 import Posts from '../components/posts';
 
 type Props = {
   allPostsData: any;
+  allTagsData: { name: string; count: number }[];
 };
 
-export default function Home({ allPostsData }: Props) {
+export default function Home({ allPostsData, allTagsData }: Props) {
   return (
-    <Layout home>
+    <Layout home allTagsData={allTagsData}>
       <Posts allPostsData={allPostsData} />
     </Layout>
   );
@@ -16,9 +17,11 @@ export default function Home({ allPostsData }: Props) {
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
+  const allTagsData = getTagsData();
   return {
     props: {
       allPostsData,
+      allTagsData,
     },
   };
 }

@@ -1,6 +1,14 @@
 import { myName } from './layout';
 
-const RightSide = () => {
+type Props = {
+  allTagsData: { name: string; count: number }[];
+};
+
+const RightSide = ({ allTagsData }: Props) => {
+  const tags = allTagsData.map((x) => {
+    return `${x.name}[${x.count}]`;
+  });
+
   return (
     <>
       <div className=" bg-gray-200">
@@ -25,7 +33,7 @@ const RightSide = () => {
       <div className=" bg-gray-200">
         Tags
         <div className="flex-grow border-t m-2 border-gray-400"></div>
-        X...
+        {tags.join(' ')}
       </div>
     </>
   );
